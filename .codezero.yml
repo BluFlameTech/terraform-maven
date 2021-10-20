@@ -20,7 +20,7 @@ ops: #if omitted than a default build is executed based on language
   check-java:
     - version:
         path: ''
-        script: javac --version
+        script: javac -version
 stages:
   - build:
       ops:
