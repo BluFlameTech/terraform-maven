@@ -17,7 +17,11 @@ ops: #if omitted than a default build is executed based on language
   validate:
     - tf-build-tools:
         script: ./mvnw clean test
+  check-java:
+    - version:
+        path: ''
+        script: javac --version
 stages:
   - build:
       ops:
-        - build
+        - check-java
