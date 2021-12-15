@@ -21,7 +21,15 @@ ops: #if omitted than a default build is executed based on language
     - version:
         path: ''
         script: javac -version
+  check-tf:
+    - version:
+        path: ''
+        script: terraform -version
 stages:
+  - setup:
+      ops:
+        - setup
   - build:
       ops:
         - check-java
+        - check-tf
